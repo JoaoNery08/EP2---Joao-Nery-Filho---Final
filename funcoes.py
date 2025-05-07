@@ -37,7 +37,27 @@ def calcula_pontos_regra_simples(dados):
 
 def calcula_pontos_soma(dados):
     total = 0
-    
+
     for dado in dados:
         total += dado
     return total
+
+#Exercício 6 
+def calcula_pontos_sequencia_baixa(dados):
+
+    #Verifica se só numeros de 1 a 6 
+    dados = [dado for dado in dados if 1 <= dado <= 6]
+
+    #Verifica se tem pelo menos 4 elementos
+    if len(dados) < 4:
+        return 0
+
+    #Olha todos os dados possíveis, verificando uma sequência baixa
+    for i in range(len(dados) - 3):
+        #Verifica se há uma sequência de 4 dados consecutivos
+        if (dados[i] + 1 == dados[i+1] and
+            dados[i] + 2 == dados[i+2] and
+            dados[i] + 3 == dados[i+3]):
+            return 15
+    
+    return 0
