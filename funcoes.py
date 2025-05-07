@@ -33,4 +33,11 @@ def calcula_pontos_regra_simples(dados):
 
     return pontos
 
+#Exercício 5 
 
+def calcula_pontos_soma(dados):
+    total = 0
+    
+    for dado in dados:
+        total += dado
+    return total
