@@ -176,3 +176,33 @@ def calcula_pontos_quadra(dados):
         return soma
     else:
         return 0
+    
+#Exercício 10
+def calcula_pontos_quina(dados):
+    
+    cont_1 = 0
+    cont_2 = 0
+    cont_3 = 0
+    cont_4 = 0
+    cont_5 = 0
+    cont_6 = 0
+
+    for valor in dados:
+        if valor == 1:
+            cont_1 += 1
+        elif valor == 2:
+            cont_2 += 1
+        elif valor == 3:
+            cont_3 += 1
+        elif valor == 4:
+            cont_4 += 1
+        elif valor == 5:
+            cont_5 += 1
+        elif valor == 6:
+            cont_6 += 1
+
+    if (cont_1 >= 5 or cont_2 >= 5 or cont_3 >= 5 or
+        cont_4 >= 5 or cont_5 >= 5 or cont_6 >= 5):
+        return 50
+    else:
+        return 0
