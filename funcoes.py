@@ -66,7 +66,7 @@ def calcula_pontos_sequencia_baixa(dados):
 
 #Exercício 7 
 def calcula_pontos_sequencia_alta(dados):
-    
+
     #Conta quantas vezes aparece cada número de 1 a 6
     tem_1 = 0
     tem_2 = 0
@@ -94,5 +94,50 @@ def calcula_pontos_sequencia_alta(dados):
         return 30
     elif tem_2 and tem_3 and tem_4 and tem_5 and tem_6:
         return 30
+    else:
+        return 0
+    
+#Exercício 8 
+def calcula_pontos_full_house(dados):
+
+    cont_1 = 0
+    cont_2 = 0
+    cont_3 = 0
+    cont_4 = 0
+    cont_5 = 0
+    cont_6 = 0
+
+    for valor in dados:
+        if valor == 1:
+            cont_1 += 1
+        elif valor == 2:
+            cont_2 += 1
+        elif valor == 3:
+            cont_3 += 1
+        elif valor == 4:
+            cont_4 += 1
+        elif valor == 5:
+            cont_5 += 1
+        elif valor == 6:
+            cont_6 += 1
+
+    #Verifica se tem um trio (3 iguais) e um par (2 iguais)
+    encontrou_trio = False
+    encontrou_par = False
+
+    #Verifica todas as contagens
+    contadores = [cont_1, cont_2, cont_3, cont_4, cont_5, cont_6]
+
+    for cont in contadores:
+        if cont == 3:
+            encontrou_trio = True
+        elif cont == 2:
+            encontrou_par = True
+
+    if encontrou_trio and encontrou_par:
+        soma = 0
+        for valor in dados:
+            soma += valor
+        return soma
     else:
         return 0
