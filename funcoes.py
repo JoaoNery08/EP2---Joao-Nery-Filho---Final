@@ -221,13 +221,13 @@ def calcula_pontos_regra_avancada(dados):
 
 #Exercício 12
 def faz_jogada(dados, categoria, cartela_de_pontos):
-    # Verifica se a categoria é uma chave da regra simples (números convertidos para string)
-    if int(categoria) in cartela_de_pontos['regra_simples']:
+    #Tenta interpretar como inteiro para categorias simples
+    if categoria in [str(i) for i in range(1, 7)]:
         numero = int(categoria)
         pontos_simples = calcula_pontos_regra_simples(dados)
         cartela_de_pontos['regra_simples'][numero] = pontos_simples[numero]
-    else:
+    elif categoria in cartela_de_pontos['regra_avancada']:
         pontos_avancados = calcula_pontos_regra_avancada(dados)
         cartela_de_pontos['regra_avancada'][categoria] = pontos_avancados[categoria]
-
+    #Se a categoria não for valida, o dicionário se mantem
     return cartela_de_pontos
