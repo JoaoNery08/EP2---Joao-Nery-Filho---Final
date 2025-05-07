@@ -63,3 +63,36 @@ def calcula_pontos_sequencia_baixa(dados):
                         return 15
 
     return 0
+
+#Exercício 7 
+def calcula_pontos_sequencia_alta(dados):
+    
+    #Conta quantas vezes aparece cada número de 1 a 6
+    tem_1 = 0
+    tem_2 = 0
+    tem_3 = 0
+    tem_4 = 0
+    tem_5 = 0
+    tem_6 = 0
+
+    for dado in dados:
+        if dado == 1:
+            tem_1 = 1
+        elif dado == 2:
+            tem_2 = 1
+        elif dado == 3:
+            tem_3 = 1
+        elif dado == 4:
+            tem_4 = 1
+        elif dado == 5:
+            tem_5 = 1
+        elif dado == 6:
+            tem_6 = 1
+
+    # Verifica se temos 1-2-3-4-5 ou 2-3-4-5-6
+    if tem_1 and tem_2 and tem_3 and tem_4 and tem_5:
+        return 30
+    elif tem_2 and tem_3 and tem_4 and tem_5 and tem_6:
+        return 30
+    else:
+        return 0
