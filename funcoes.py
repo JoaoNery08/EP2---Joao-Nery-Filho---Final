@@ -141,3 +141,38 @@ def calcula_pontos_full_house(dados):
         return soma
     else:
         return 0
+    
+#Exercício 9
+def calcula_pontos_quadra(dados):
+
+    cont_1 = 0
+    cont_2 = 0
+    cont_3 = 0
+    cont_4 = 0
+    cont_5 = 0
+    cont_6 = 0
+
+    for valor in dados:
+        if valor == 1:
+            cont_1 += 1
+        elif valor == 2:
+            cont_2 += 1
+        elif valor == 3:
+            cont_3 += 1
+        elif valor == 4:
+            cont_4 += 1
+        elif valor == 5:
+            cont_5 += 1
+        elif valor == 6:
+            cont_6 += 1
+
+    #Verifica se algum número apareceu 4 ou mais vezes
+    if (cont_1 >= 4 or cont_2 >= 4 or cont_3 >= 4 or
+        cont_4 >= 4 or cont_5 >= 4 or cont_6 >= 4):
+        
+        soma = 0
+        for valor in dados:
+            soma += valor
+        return soma
+    else:
+        return 0
