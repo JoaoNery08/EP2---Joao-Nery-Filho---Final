@@ -218,3 +218,16 @@ def calcula_pontos_regra_avancada(dados):
         'sequencia_alta': calcula_pontos_sequencia_alta(dados),
         'sequencia_baixa': calcula_pontos_sequencia_baixa(dados)
     }
+
+#Exercício 12
+def faz_jogada(dados, categoria, cartela_de_pontos):
+    # Verifica se a categoria é uma chave da regra simples (números convertidos para string)
+    if int(categoria) in cartela_de_pontos['regra_simples']:
+        numero = int(categoria)
+        pontos_simples = calcula_pontos_regra_simples(dados)
+        cartela_de_pontos['regra_simples'][numero] = pontos_simples[numero]
+    else:
+        pontos_avancados = calcula_pontos_regra_avancada(dados)
+        cartela_de_pontos['regra_avancada'][categoria] = pontos_avancados[categoria]
+
+    return cartela_de_pontos
