@@ -44,20 +44,21 @@ def calcula_pontos_soma(dados):
 
 #Exercício 6 
 def calcula_pontos_sequencia_baixa(dados):
-
-    #Verifica se só numeros de 1 a 6 
+    #Filtra os dados para garantir que temos apenas números de 1 a 6
     dados = [dado for dado in dados if 1 <= dado <= 6]
 
     #Verifica se tem pelo menos 4 elementos
     if len(dados) < 4:
         return 0
 
-    #Olha todos os dados possíveis, verificando uma sequência baixa
+    #Verifica todas as combinações de 4 dados consecutivos
     for i in range(len(dados) - 3):
-        #Verifica se há uma sequência de 4 dados consecutivos
-        if (dados[i] + 1 == dados[i+1] and
-            dados[i] + 2 == dados[i+2] and
-            dados[i] + 3 == dados[i+3]):
+
+        #Ordena os dados
+        sequencia = sorted(dados[i:i+4])
+
+        #Verifica se a sequência de 4 dados é consecutiva
+        if sequencia[0] + 1 == sequencia[1] and sequencia[1] + 1 == sequencia[2] and sequencia[2] + 1 == sequencia[3]:
             return 15
-    
+
     return 0
