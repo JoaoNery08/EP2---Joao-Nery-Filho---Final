@@ -179,7 +179,7 @@ def calcula_pontos_quadra(dados):
     
 #Exercício 10
 def calcula_pontos_quina(dados):
-    
+
     cont_1 = 0
     cont_2 = 0
     cont_3 = 0
@@ -206,3 +206,15 @@ def calcula_pontos_quina(dados):
         return 50
     else:
         return 0
+    
+#Exercício 11
+def calcula_pontos_regra_avancada(dados):
+
+    return {
+        'cinco_iguais': calcula_pontos_quina(dados),
+        'full_house': calcula_pontos_full_house(dados),
+        'quadra': calcula_pontos_quadra(dados),
+        'sem_combinacao': calcula_pontos_soma(dados),
+        'sequencia_alta': calcula_pontos_sequencia_alta(dados),
+        'sequencia_baixa': calcula_pontos_sequencia_baixa(dados)
+    }
