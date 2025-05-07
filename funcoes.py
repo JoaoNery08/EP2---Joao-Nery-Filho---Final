@@ -23,5 +23,14 @@ def remover_dado(dados_rolados, dados_no_estoque, indice):
         dados_rolados.append(dado)
     return [dados_rolados, dados_no_estoque]
 
+#Exercício 4
+def calcula_pontos_regra_simples(dados):
+    pontos = {i: 0 for i in range(1, 7)}  # Inicia o dicionário com 0 para cada face
+
+    for dado in dados:
+        if 1 <= dado <= 6:
+            pontos[dado] += dado
+
+    return pontos
 
 
